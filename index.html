@@ -6,6 +6,7 @@
     <title>Contact Details Layout</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -17,15 +18,16 @@
             color: white;
             padding: 10px 15px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             font-size: 18px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .contact-details {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
         }
         .contact-details span {
             display: flex;
@@ -37,13 +39,11 @@
             height: 20px;
             margin-right: 8px;
         }
-        .logo {
-            display: none;
-        }
         .logo-below {
             text-align: left;
-            padding: 15px 15px;
+            padding: 15px;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             border-bottom: 5px solid #00bfff;
@@ -54,46 +54,23 @@
             height: auto;
         }
         .slogan-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
             background: linear-gradient(to right, #0056b3, #00bfff);
             color: white;
-            font-size: 30px;
+            font-size: 24px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            padding: 15px 130px;
+            padding: 15px;
             border-radius: 10px;
             margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 1000px;
+            max-width: 100%;
             text-align: center;
         }
-
-        .about-us-logo {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .about-us-logo img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
         .button-group {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
         }
         .explore-button, .services-button {
             background-color: #0056b3;
@@ -109,22 +86,21 @@
         }
         .dropdown-menu {
             display: flex;
-            justify-content: flex-end;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
             padding: 10px 15px;
             background-color: #00bfff;
             color: white;
             font-weight: 700;
             font-size: 16px;
-            position: relative;
         }
         .dropdown-menu div {
-            position: relative;
             cursor: pointer;
             white-space: nowrap;
         }
         .content {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 30px auto;
             padding: 20px;
             background-color: #ffffff;
@@ -132,14 +108,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .form-container {
-            max-width: 500px;
+            max-width: 100%;
+            width: 100%;
             background-color: #ffffff;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            position: absolute;
-            top: 300px;
-            right: 50px;
+            margin: 20px auto;
         }
         .form-container h2 {
             text-align: center;
@@ -160,12 +135,6 @@
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 14px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        .form-container form select {
-            appearance: none;
-            background: url('https://cdn-icons-png.flaticon.com/512/32/32213.png') no-repeat right 10px center;
-            background-size: 16px;
         }
         .form-container form button {
             background-color: #0056b3;
@@ -175,42 +144,39 @@
             font-weight: 700;
             padding: 10px;
             height: auto;
-            transition: background-color 0.3s ease;
         }
         .form-container form button:hover {
             background-color: #004494;
         }
         .info-section {
-            max-width: 800px;
-            padding: 40px;
-            margin: 20px;
+            max-width: 100%;
+            padding: 20px;
+            margin: 20px auto;
             border-radius: 8px;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: absolute;
-            top: 280px;
-            left: 50px;
             color: #333;
         }
         .info-section .rating {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 5px;
+            flex-wrap: wrap;
         }
         .info-section .rating img {
             width: 25px;
             height: 25px;
+            object-fit: contain;
         }
         .info-section h3 {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
             color: #333;
         }
         .info-section p {
             margin: 15px 0;
-            font-size: 18px;
+            font-size: 16px;
         }
         .info-section .job-assistance {
             display: inline-block;
@@ -218,8 +184,7 @@
             color: white;
             padding: 10px 20px;
             border-radius: 8px;
-            font-size: 18px;
-            margin: 15px 0;
+            font-size: 16px;
             text-align: center;
         }
         .logo-section {
@@ -230,13 +195,70 @@
             margin-top: 20px;
         }
         .logo-section img {
-            width: 120px;
+            width: 80px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        .logo-section .opencv-logo {
-            width: 220px;
+        .about-us-logo {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .about-us-logo img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-below {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .slogan-container {
+                font-size: 18px;
+                padding: 10px;
+            }
+            .button-group {
+                justify-content: center;
+            }
+            .form-container {
+                padding: 20px;
+            }
+            .info-section {
+                padding: 15px;
+            }
+            .info-section h3 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .contact-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .slogan-container {
+                font-size: 16px;
+            }
+            .logo-section img {
+                width: 60px;
+            }
         }
     </style>
 </head>
@@ -275,7 +297,7 @@
         <div class="job-assistance">100% Job Assistance</div>
         <h3>Get Job Ready with <span style="color: #0056b3;">Global Certification!</span></h3>
         <div class="logo-section">
-            <img src="opencv_logo.png" alt="OpenCV Logo" class="opencv-logo">
+            <img src="opencv_logo.png" alt="OpenCV Logo">
             <img src="oracle logo.png" alt="Oracle Logo">
             <img src="ros-apis.png" alt="ROS Logo">
             <img src="sqllogo.png" alt="SQL Logo">
@@ -328,7 +350,6 @@
         </form>
     </div>
 
-    <!-- About Us Logo Overlay -->
     <div class="about-us-logo" id="aboutUsLogo">
         <img src="about us.png" alt="About Us Logo">
     </div>
@@ -353,4 +374,3 @@
     </script>
 </body>
 </html>
-

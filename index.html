@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Details Layout</title>
+    <title>Contact Details Layout with Video</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
@@ -13,6 +13,29 @@
             background-color: #f9f9f9;
             color: #333;
         }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            object-fit: cover;
+        }
+
+        .content-section {
+            position: relative;
+            z-index: 1;
+        }
+
         .header {
             background-color: #0056b3;
             color: white;
@@ -23,22 +46,26 @@
             font-size: 18px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .contact-details {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 10px;
         }
+
         .contact-details span {
             display: flex;
             align-items: center;
             font-size: 16px;
         }
+
         .contact-details span img {
             width: 20px;
             height: 20px;
             margin-right: 8px;
         }
+
         .logo-below {
             text-align: left;
             padding: 15px;
@@ -49,10 +76,12 @@
             border-bottom: 5px solid #00bfff;
             background-color: #e6f7ff;
         }
+
         .logo-below img {
             width: 150px;
             height: auto;
         }
+
         .slogan-container {
             text-align: center;
             background: linear-gradient(to right, #0056b3, #00bfff);
@@ -64,14 +93,15 @@
             padding: 15px;
             border-radius: 10px;
             margin: 20px auto;
-            max-width: 100%;
-            text-align: center;
+            max-width: 200%;
         }
+
         .button-group {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
+
         .explore-button, .services-button {
             background-color: #0056b3;
             color: white;
@@ -81,9 +111,11 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         .explore-button:hover, .services-button:hover {
             background-color: #004494;
         }
+
         .dropdown-menu {
             display: flex;
             flex-wrap: wrap;
@@ -95,10 +127,12 @@
             font-weight: 700;
             font-size: 16px;
         }
+
         .dropdown-menu div {
             cursor: pointer;
             white-space: nowrap;
         }
+
         .content {
             max-width: 100%;
             margin: 30px auto;
@@ -107,6 +141,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .form-container {
             max-width: 100%;
             width: 100%;
@@ -116,6 +151,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             margin: 20px auto;
         }
+
         .form-container h2 {
             text-align: center;
             margin-bottom: 25px;
@@ -123,11 +159,13 @@
             color: #0056b3;
             font-size: 24px;
         }
+
         .form-container form {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
+
         .form-container form input, .form-container form select, .form-container form button {
             width: 100%;
             padding: 8px;
@@ -136,6 +174,7 @@
             border-radius: 6px;
             font-size: 14px;
         }
+
         .form-container form button {
             background-color: #0056b3;
             color: white;
@@ -145,9 +184,11 @@
             padding: 10px;
             height: auto;
         }
+
         .form-container form button:hover {
             background-color: #004494;
         }
+
         .info-section {
             max-width: 100%;
             padding: 20px;
@@ -157,27 +198,32 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             color: #333;
         }
+
         .info-section .rating {
             display: flex;
             align-items: center;
             gap: 5px;
             flex-wrap: wrap;
         }
+
         .info-section .rating img {
             width: 25px;
             height: 25px;
             object-fit: contain;
         }
+
         .info-section h3 {
             font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
             color: #333;
         }
+
         .info-section p {
             margin: 15px 0;
             font-size: 16px;
         }
+
         .info-section .job-assistance {
             display: inline-block;
             background-color: #0056b3;
@@ -187,6 +233,7 @@
             font-size: 16px;
             text-align: center;
         }
+
         .logo-section {
             display: flex;
             flex-wrap: wrap;
@@ -194,12 +241,14 @@
             justify-content: center;
             margin-top: 20px;
         }
+
         .logo-section img {
             width: 80px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
+
         .about-us-logo {
             display: none;
             position: fixed;
@@ -212,6 +261,7 @@
             align-items: center;
             z-index: 1000;
         }
+
         .about-us-logo img {
             max-width: 90%;
             max-height: 90%;
@@ -225,19 +275,24 @@
                 align-items: center;
                 gap: 15px;
             }
+
             .slogan-container {
                 font-size: 18px;
                 padding: 10px;
             }
+
             .button-group {
                 justify-content: center;
             }
+
             .form-container {
                 padding: 20px;
             }
+
             .info-section {
                 padding: 15px;
             }
+
             .info-section h3 {
                 font-size: 20px;
             }
@@ -249,13 +304,16 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
             .contact-details {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .slogan-container {
                 font-size: 16px;
             }
+
             .logo-section img {
                 width: 60px;
             }
@@ -263,114 +321,126 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="contact-details">
-            <span><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone"> 7301671104</span>
-            <span>8051081240</span>
-        </div>
-    </div>
-    <div class="logo-below">
-        <img src="neuronlogo.png" alt="Neuron Logo">
-        <div class="slogan-container">
-            <p>AI for a Better Tomorrow</p>
-        </div>
-        <div class="button-group">
-            <button class="explore-button">Explore Programs</button>
-            <button class="services-button">Explore Our Services</button>
-        </div>
-    </div>
-    <div class="dropdown-menu">
-        <div id="about-us">About Us</div>
-        <div>Location</div>
-        <div>Hiring Partners</div>
-    </div>
-    <div class="info-section">
-        <div class="rating">
-            <span style="background-color: #ffcc00; padding: 8px 15px; border-radius: 5px; font-weight: bold; color: white;">Rating</span>
-            <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
-            <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
-            <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
-            <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
-            <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
-        </div>
-        <p>Building skills is an investment for your future.</p>
-        <div class="job-assistance">100% Job Assistance</div>
-        <h3>Get Job Ready with <span style="color: #0056b3;">Global Certification!</span></h3>
-        <div class="logo-section">
-            <img src="opencv_logo.png" alt="OpenCV Logo">
-            <img src="oracle logo.png" alt="Oracle Logo">
-            <img src="ros-apis.png" alt="ROS Logo">
-            <img src="sqllogo.png" alt="SQL Logo">
-            <img src="iot logo.jpg" alt="IoT Logo">
-            <img src="machine learning logo.png" alt="Machine Learning Logo">
-            <img src="python  logo.png" alt="Python Logo">
-            <img src="nlp_logo.jpg" alt="NLP Logo">
-            <img src="deeplearning.png" alt="Deep Learning Logo">
-            <img src="tensorflow.png" alt="TensorFlow Logo">
-        </div>
-    </div>
-    <div class="form-container">
-        <h2>Book a Live Demo Class</h2>
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email ID" required>
-            <select required>
-                <option value="">Country</option>
-                <option value="India">India</option>
-                <option value="USA">USA</option>
-                <option value="UK">UK</option>
-                <option value="Other">Other</option>
-            </select>
-            <input type="tel" placeholder="Mobile Number" required>
-            <select required>
-                <option value="">I want to enroll in</option>
-                <option value="Course A">Course A</option>
-                <option value="Course B">Course B</option>
-            </select>
-            <select required>
-                <option value="">My Education is</option>
-                <option value="Graduate">Graduate</option>
-                <option value="Post Graduate">Post Graduate</option>
-            </select>
-            <select required>
-                <option value="">Working Professional</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-            <select required>
-                <option value="">City</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Ranchi">Ranchi</option>
-                <option value="Patna">Patna</option>
-                <option value="Other">Other</option>
-            </select>
-            <button type="submit">Submit</button>
-        </form>
+    <!-- Video Section -->
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="D:/Neuron/NEURON.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <div class="about-us-logo" id="aboutUsLogo">
-        <img src="about us.png" alt="About Us Logo">
-    </div>
+    <!-- Content Section -->
+    <div class="content-section">
+        <div class="header">
+            <div class="contact-details">
+                <span><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone"> 7301671104</span>
+                <span>8051081240</span>
+            </div>
+        </div>
+        <div class="logo-below">
+            <img src="neuronlogo.png" alt="Neuron Logo">
+            <div class="slogan-container">
+                <p>AI for a Better Tomorrow</p>
+            </div>
+            <div class="button-group">
+                <button class="explore-button">Explore Programs</button>
+                <button class="services-button">Explore Our Services</button>
+            </div>
+        </div>
+        <div class="dropdown-menu">
+            <div id="about-us">About Us</div>
+            <div>Location</div>
+            <div>Hiring Partners</div>
+        </div>
+        <div class="info-section">
+            <div class="rating">
+                <span style="background-color: #ffcc00; padding: 8px 15px; border-radius: 5px; font-weight: bold; color: white;">Rating</span>
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Star">
+            </div>
+            <p>Building skills is an investment in your future.</p>
+            <div class="job-assistance">100% Job Assistance</div>
+            <h3>Get Job Ready with <span style="color: #0056b3;">Global Certification!</span></h3>
+            <div class="logo-section">
+                <img src="opencv_logo.png" alt="OpenCV Logo">
+                <img src="oracle logo.png" alt="Oracle Logo">
+                <img src="ros-apis.png" alt="ROS Logo">
+                <img src="sqllogo.png" alt="SQL Logo">
+                <img src="iot logo.jpg" alt="IoT Logo">
+                <img src="machine learning logo.png" alt="Machine Learning Logo">
+                <img src="python  logo.png" alt="Python Logo">
+                <img src="nlp_logo.jpg" alt="NLP Logo">
+                <img src="deeplearning.png" alt="Deep Learning Logo">
+                <img src="tensorflow.png" alt="TensorFlow Logo">
+            </div>
+        </div>
+        <div class="form-container">
+            <h2>Book a Live Demo Class</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email ID" required>
+                <select required>
+                    <option value="">Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="tel" placeholder="Mobile Number" required>
+                <select required>
+                    <option value="">I want to enroll in</option>
+                    <option value="Course A">Course A</option>
+                    <option value="Course B">Course B</option>
+                </select>
+                <select required>
+                    <option value="">My Education is</option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Post Graduate">Post Graduate</option>
+                </select>
+                <select required>
+                    <option value="">Working Professional</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <select required>
+                    <option value="">City</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Ranchi">Ranchi</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
 
-    <script>
-        const aboutUsOption = document.getElementById('about-us');
-        const aboutUsLogo = document.getElementById('aboutUsLogo');
+        <div class="about-us-logo" id="aboutUsLogo">
+            <img src="about us.png" alt="About Us Logo">
+        </div>
 
-        aboutUsOption.addEventListener('click', () => {
-            aboutUsLogo.style.display = 'flex';
-        });
+        <script>
+            const aboutUsOption = document.getElementById('about-us');
+            const aboutUsLogo = document.getElementById('aboutUsLogo');
 
-        aboutUsLogo.addEventListener('click', () => {
-            aboutUsLogo.style.display = 'none';
-        });
+            aboutUsOption.addEventListener('click', () => {
+                aboutUsLogo.style.display = 'flex';
+            });
 
-        document.addEventListener('click', (e) => {
-            if (!aboutUsLogo.contains(e.target) && e.target !== aboutUsOption) {
+            aboutUsLogo.addEventListener('click', () => {
                 aboutUsLogo.style.display = 'none';
-            }
-        });
-    </script>
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!aboutUsLogo.contains(e.target) && e.target !== aboutUsOption) {
+                    aboutUsLogo.style.display = 'none';
+                }
+            });
+        </script>
+    </div>
 </body>
 </html>
+

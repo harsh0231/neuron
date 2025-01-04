@@ -26,14 +26,13 @@
             width: 100%;
             background-color: #003d56;
             color: white;
-            padding: 0px 0; /* Reduced height */
+            padding: 0px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 999;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-right: px; /* Padding for right-side button */
-            padding-left: 20px; /* Padding for left side */
+            padding-left: 20px;
         }
 
         .nav-bar {
@@ -57,7 +56,6 @@
             background-color: #1f87b0;
         }
 
-        /* Join Our Courses Button */
         .join-button {
             background-color: #1f87b0;
             color: white;
@@ -75,7 +73,6 @@
             background-color: #003d56;
         }
 
-        /* Hero Section (Video Background) */
         .hero-section {
             position: relative;
             width: 100%;
@@ -88,11 +85,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 110%;
+            height: 100%;
             object-fit: cover;
         }
 
-        /* Form Section */
         .form-container {
             display: none;
             position: fixed;
@@ -160,7 +156,6 @@
             background-color: #1f87b0;
         }
 
-        /* Our Key Features Section */
         .key-features-section,
         .courses-section,
         .skills-section {
@@ -203,30 +198,12 @@
             transform: translateY(-10px);
         }
 
-        .feature-card h3,
-        .course-card h3,
-        .skills-card h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #003d56;
-        }
-
-        .feature-card p,
-        .course-card p,
-        .skills-card p {
-            font-size: 16px;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .course-card img,
-        .skills-card img {
-            width: 150px; /* Increased logo size by 50% */
+        .course-card img {
+            width: 150px;
             height: 150px;
             margin-bottom: 15px;
         }
 
-        /* About Us Modal */
         .about-us-logo {
             display: none;
             position: fixed;
@@ -246,7 +223,25 @@
             border-radius: 10px;
         }
 
-        /* Responsive Design */
+        .full-screen-video {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .full-screen-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         @media (max-width: 768px) {
             .nav-bar {
                 flex-direction: column;
@@ -272,12 +267,10 @@
                 margin-bottom: 30px;
             }
         }
-
     </style>
 </head>
 
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="nav-bar">
             <a href="#">Home</a>
@@ -288,7 +281,6 @@
         <button class="join-button" id="joinBtn">Join Our Courses</button>
     </header>
 
-    <!-- Hero Section (Video Background) -->
     <div class="hero-section">
         <video autoplay loop muted>
             <source src="NEURON.mp4" type="video/mp4">
@@ -296,7 +288,6 @@
         </video>
     </div>
 
-    <!-- Our Key Features Section -->
     <div class="key-features-section">
         <div class="section-title">Our Key Features</div>
         <div class="feature-cards">
@@ -315,34 +306,32 @@
         </div>
     </div>
 
-    <!-- Courses Section -->
     <div class="courses-section">
         <div class="section-title">Our Courses</div>
         <div class="course-cards">
-            <div class="course-card">
-                <img src="Neuron/Data Analysts.jpg" alt="Data Analytics Logo">
+            <div class="course-card" id="dataAnalytics">
+                <img src="Data Analysts.jpg" alt="Data Analytics Logo">
                 <h3>Data Analytics</h3>
                 <p>Learn to analyze and visualize data to derive meaningful insights</p>
             </div>
             <div class="course-card">
-                <img src="Neuron/Data science.jpg" alt="Data Science Logo">
+                <img src="Data science.jpg" alt="Data Science Logo">
                 <h3>Full Stack Data Science</h3>
                 <p>Master data science concepts from end-to-end, including AI and ML</p>
             </div>
             <div class="course-card">
-                <img src="Neuron/iot logo.jpg" alt="IoT Logo">
+                <img src="iot logo.jpg" alt="IoT Logo">
                 <h3>Internet of Things (IoT)</h3>
                 <p>Learn how to connect devices and build smart applications</p>
             </div>
             <div class="course-card">
-                <img src="Neuron/ros-apis.png" alt="ROS Logo">
+                <img src="ros-apis.png" alt="ROS Logo">
                 <h3>Robot Operating System (ROS)</h3>
                 <p>Gain hands-on experience with robotics and automation systems</p>
             </div>
         </div>
     </div>
 
-    <!-- Skills You Will Earn Section -->
     <div class="skills-section">
         <div class="section-title">Skills You Will Earn</div>
         <div class="skills-cards">
@@ -381,7 +370,6 @@
         </div>
     </div>
 
-    <!-- Form Section (Initially hidden) -->
     <div class="form-container" id="formContainer">
         <h2>Book a Live Demo Class</h2>
         <form>
@@ -404,13 +392,18 @@
         </form>
     </div>
 
-    <!-- About Us Modal -->
     <div class="about-us-logo" id="aboutUsLogo">
         <img src="about us.png" alt="About Us Logo">
     </div>
 
+    <div class="full-screen-video" id="fullScreenVideo">
+        <video autoplay loop muted>
+            <source src="data_analy_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <script>
-        // Show form when the 'Join Our Courses' button is clicked
         const joinBtn = document.getElementById('joinBtn');
         const formContainer = document.getElementById('formContainer');
 
@@ -418,14 +411,12 @@
             formContainer.classList.add('show');
         });
 
-        // Close the form when clicking anywhere outside
         document.addEventListener('click', (e) => {
             if (!formContainer.contains(e.target) && e.target !== joinBtn) {
                 formContainer.classList.remove('show');
             }
         });
 
-        // About Us Modal
         const aboutUsOption = document.getElementById('about-us');
         const aboutUsLogo = document.getElementById('aboutUsLogo');
 
@@ -437,10 +428,15 @@
             aboutUsLogo.style.display = 'none';
         });
 
-        document.addEventListener('click', (e) => {
-            if (!aboutUsLogo.contains(e.target) && e.target !== aboutUsOption) {
-                aboutUsLogo.style.display = 'none';
-            }
+        const dataAnalyticsCard = document.getElementById('dataAnalytics');
+        const fullScreenVideo = document.getElementById('fullScreenVideo');
+
+        dataAnalyticsCard.addEventListener('click', () => {
+            fullScreenVideo.style.display = 'flex';
+        });
+
+        fullScreenVideo.addEventListener('click', () => {
+            fullScreenVideo.style.display = 'none';
         });
     </script>
 </body>

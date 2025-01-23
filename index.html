@@ -11,7 +11,7 @@
             padding: 0;
             font-family: 'Lato', sans-serif;
             box-sizing: border-box;
-            background-color: #fff8dc; /* Light yellow background */
+            background-color: #fff8dc;
         }
 
         /* Header Styles */
@@ -20,7 +20,7 @@
             justify-content: space-between;
             align-items: center;
             background-color: #F4C430;
-            padding: 15px 50px;
+            padding: 15px 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             border-bottom: 3px solid #000;
             position: sticky;
@@ -35,18 +35,18 @@
         }
 
         .header-logo img {
-            height: 70px;
+            height: 50px;
         }
 
         .header-nav {
             display: flex;
-            gap: 40px;
+            gap: 20px;
         }
 
         .header-nav button {
             background: none;
             border: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #000;
             cursor: pointer;
@@ -58,6 +58,116 @@
             transform: scale(1.1);
         }
 
+        /* Responsive Header */
+        @media (max-width: 768px) {
+            .header {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-nav {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+        }
+        /* Footer Styles */
+        .footer {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 60px 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section {
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            font-size: 1.8rem;
+            color: #F4C430;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #F4C430;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .footer-section a {
+            color: #F4C430;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .footer-icons {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .footer-icons i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #F4C430;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #F4C430;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #F4C430;
+            color: #333;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        .footer-bottom a {
+            color: #F4C430;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
         /* Section Heading */
         .section-heading {
             text-align: center;
@@ -77,6 +187,60 @@
             height: 4px;
             background-color: #ffcc00;
             border-radius: 5px;
+        }
+
+        /* Benefits Section */
+        .benefits-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits-container h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .benefits-container h2::after {
+            content: "";
+            display: block;
+            margin: 10px auto;
+            width: 80px;
+            height: 3px;
+            background-color: #ffcc00;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            color: #F4C430;
+            margin-right: 20px;
+        }
+
+        .benefit-text {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .benefit-text span {
+            font-weight: bold;
+            color: #000;
         }
 
         /* About Us Section */
@@ -308,6 +472,34 @@
         </nav>
     </header>
 
+    <div class="benefits-container">
+        <h2>Why Choose Neuron?</h2>
+        <div class="benefit-item">
+            <span class="benefit-icon">&#128640;</span>
+            <div class="benefit-text">We provide <span>100% Placement Assistance</span> to ensure your success in the industry.</div>
+        </div>
+        <div class="benefit-item">
+            <span class="benefit-icon">&#128187;</span>
+            <div class="benefit-text">Hands-on experience with <span>Client-Based Industry Projects</span> for practical learning.</div>
+        </div>
+        <div class="benefit-item">
+            <span class="benefit-icon">&#127891;</span>
+            <div class="benefit-text">Earn <span>Internship Certificates</span> from top companies for enhanced career prospects.</div>
+        </div>
+        <div class="benefit-item">
+            <span class="benefit-icon">&#128736;</span>
+            <div class="benefit-text">Get hired by <span>Neuron AI</span> for custom chatbot projects and more.</div>
+        </div>
+        <div class="benefit-item">
+            <span class="benefit-icon">&#128104;&#8205;&#127891;</span>
+            <div class="benefit-text">Learn from <span>IITians</span> and industry professionals working in MNCs.</div>
+        </div>
+        <div class="benefit-item">
+            <span class="benefit-icon">&#127919;</span>
+            <div class="benefit-text">Receive <span>Mock Interviews</span>, HR connections, LinkedIn profile building, and resume development services.</div>
+        </div>
+    </div>
+
     <div class="about-us-container">
         <h2>About Us</h2>
         <p>Neuron AI and Robotics is a <span>premier institute</span> dedicated to advancing education in <span>Artificial Intelligence</span> and <span>Robotics</span>. Our mission is to empower individuals with the skills and knowledge necessary to thrive in these fields. We provide a unique blend of theoretical foundations and hands-on learning, enabling students to engage with real-world projects that mirror industry challenges.</p>
@@ -398,5 +590,36 @@
             window.location.href = page;
         }
     </script>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p class="footer-icons"><i class="fas fa-phone"></i> +91 9263624743</p>
+                <p class="footer-icons"><i class="fas fa-envelope"></i> info@neuron.org.in</p>
+                <p class="footer-icons"><i class="fas fa-map-marker-alt"></i> 1st Floor, AnjuShree Complex, East Jail Road, Ranchi - 834001</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#">Programs</a></p>
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">Join Our Courses</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>About Neuron</h3>
+                <p>Neuron AI & Robotics is committed to advancing education and empowering students with skills in AI and Robotics. Join us to explore a future of innovation and success.</p>
+                <div class="social-icons">
+                    <a href="#" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Neuron AI & Robotics. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

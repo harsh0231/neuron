@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuron AI & Robotics - IoT Course</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFF9E6; /* Main background */
+            color: #333;
+        }
+        header {
+            background-color: #FFE4A1; /* Header background: Slightly darker light yellow */
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        header img {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .header-title {
+            margin-top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto 40px auto;
+        }
+        .module {
+            background-color: #FFFACD; /* Module background */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #333;
+            color: #FFD700; /* Header text color */
+            font-weight: bold;
+        }
+        .module-header:hover {
+            background-color: #555;
+        }
+        .module-header i {
+            margin-right: 10px;
+        }
+        .module-content {
+            display: none;
+            padding: 20px;
+            background-color: #FFFAF0;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .module-content ul {
+            list-style-type: square;
+            margin: 0;
+            padding-left: 20px;
+        }
+        .back-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-button {
+            text-decoration: none;
+            background-color: #333;
+            color: #FFD700;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #555;
+        }
+        @media screen and (max-width: 768px) {
+            .module-header {
+                font-size: 16px;
+            }
+            .module-content {
+                font-size: 14px;
+            }
+            .header-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+    <script>
+        function toggleModuleContent(event) {
+            const moduleContent = event.currentTarget.nextElementSibling;
+            moduleContent.style.display = moduleContent.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Neuron AI & Robotics Logo">
+        <div class="header-title">Courses for (IoT) Internet of Things</div>
+    </header>
+    <div class="container">
+        <!-- Module 1 -->
+        <div class="module">
+            <div class="module-header" onclick="toggleModuleContent(event)">
+                <i class="fas fa-network-wired"></i> Module 1: Introduction to IoT
+            </div>
+            <div class="module-content">
+                <ul>
+                    <li>What is IoT? Concepts, Architecture, and Ecosystem</li>
+                    <li>Applications of IoT in Real-World Scenarios</li>
+                    <li>Overview of IoT Platforms and Communication Protocols</li>
+                    <li>IoT Hardware Overview: Sensors, Actuators, Microcontrollers</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Module 2 -->
+        <div class="module">
+            <div class="module-header" onclick="toggleModuleContent(event)">
+                <i class="fas fa-microchip"></i> Module 2: IoT Hardware and Devices
+            </div>
+            <div class="module-content">
+                <ul>
+                    <li>Microcontrollers and Development Boards</li>
+                    <li>Introduction to Arduino, Raspberry Pi, and ESP32</li>
+                    <li>Setting Up and Programming Development Boards</li>
+                    <li>Sensors and Actuators:
+                        <ul>
+                            <li>Types of Sensors: Temperature, Humidity, etc.</li>
+                            <li>Working with Actuators: Motors, Relays, and Servos</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Module 3 -->
+        <div class="module">
+            <div class="module-header" onclick="toggleModuleContent(event)">
+                <i class="fas fa-wifi"></i> Module 3: IoT Communication Protocols
+            </div>
+            <div class="module-content">
+                <ul>
+                    <li>Wired Protocols: UART, SPI, and I2C Communication</li>
+                    <li>Wireless Communication:
+                        <ul>
+                            <li>Wi-Fi, Bluetooth, and Zigbee Protocols</li>
+                            <li>Introduction to LoRa and NB-IoT for Long-Range Communication</li>
+                        </ul>
+                    </li>
+                    <li>MQTT and HTTP:
+                        <ul>
+                            <li>Basics of MQTT Protocol for IoT Applications</li>
+                            <li>RESTful APIs for IoT Device Communication</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Module 4 -->
+        <div class="module">
+            <div class="module-header" onclick="toggleModuleContent(event)">
+                <i class="fas fa-code"></i> Module 4: IoT Software Development
+            </div>
+            <div class="module-content">
+                <ul>
+                    <li>Programming for IoT Devices:</li>
+                    <li>C/C++ for Arduino</li>
+                    <li>Python for Raspberry Pi</li>
+                    <li>IoT Data Handling:
+                        <ul>
+                            <li>Working with Data from Sensors</li>
+                            <li>Data Cleaning, Transformation, and Storage</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Module 5 -->
+        <div class="module">
+            <div class="module-header" onclick="toggleModuleContent(event)">
+                <i class="fas fa-home"></i> Module 5: IoT Applications
+            </div>
+            <div class="module-content">
+                <ul>
+                    <li>Home Automation:
+                        <ul>
+                            <li>Setting Up Smart Home Devices: Lights, Thermostats, Cameras</li>
+                            <li>Voice-Controlled Applications with Alexa and Google Assistant</li>
+                        </ul>
+                    </li>
+                    <li>Healthcare IoT:
+                        <ul>
+                            <li>Remote Patient Monitoring Devices</li>
+                            <li>Wearable Health Tech Applications</li>
+                        </ul>
+                    </li>
+                    <li>Smart Cities:
+                        <ul>
+                            <li>IoT for Traffic Management, Waste Management, and Energy Monitoring</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Capstone Projects -->
+        <div class="module">
+            <div class="module-header" onclick="toggleModuleContent(event)">
+                <i class="fas fa-project-diagram"></i> Capstone Projects and Certification
+            </div>
+            <div class="module-content">
+                <ul>
+                    <li>Smart Home System: Build an IoT-based home automation system</li>
+                    <li>IoT Weather Station: Create a real-time weather monitoring system</li>
+                    <li>Healthcare IoT: Develop a remote health monitoring device</li>
+                    <li>Smart Agriculture System: IoT for irrigation, soil monitoring, and crop health</li>
+                </ul>
+            </div>
+        </div>
+        <div class="back-button-container">
+            <a href="index.html" class="back-button">Back to Main</a>
+        </div>
+    </div>
+</body>
+</html>

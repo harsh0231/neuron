@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuron AI & Robotics - Admission Form</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f7c104;
+            font-weight: bold;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            border-color: #f7c104;
+            outline: none;
+        }
+
+        button {
+            background-color: #f7c104;
+            color: #333;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .footer a {
+            color: #f7c104;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            input, select {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Neuron AI & Robotics Admission Form</h1>
+        <form id="admissionForm">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+
+            <label for="qualification">Qualification</label>
+            <input type="text" id="qualification" name="qualification" placeholder="Enter your qualification" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="course">Select Course</label>
+            <select id="course" name="course" required>
+                <option value="">-- Select a course --</option>
+                <option value="Data Analytics">Data Analytics</option>
+                <option value="Data Science">Data Science</option>
+                <option value="IoT">IoT</option>
+                <option value="Robot Operating System">Robot Operating System</option>
+            </select>
+
+            <button type="button" id="submitBtn">Join Course</button>
+        </form>
+        <div class="footer">All rights reserved &copy; <a href="https://neuronairobotics.com" target="_blank">Neuron AI & Robotics</a></div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAbuiD7hZm8GvTh49wVJdgrCX1MCHJkPJg",
+            authDomain: "studentadmissions-63868.firebaseapp.com",
+            projectId: "studentadmissions-63868",
+            storageBucket: "studentadmissions-63868.firebasestorage.app",
+            messagingSenderId: "580021305222",
+            appId: "1:580021305222:web:dd2767905340fef041f607"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById('submitBtn').addEventListener('click', async () => {
+            const form = document.getElementById('admissionForm');
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            try {
+                await addDoc(collection(db, "admissions"), data);
+                alert('Registration successful!');
+                form.reset();
+                window.location.href = './index.html'; // Redirect back to home page
+            } catch (error) {
+                alert('Error submitting the form. Please try again later.');
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.container')) {
+                window.location.href = './index.html'; // Redirect to home page if clicked outside the form
+            }
+        });
+    </script>
+</body>
+</html>

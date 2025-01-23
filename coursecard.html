@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fffbe6; /* Lightest yellow */
+            color: #000000; /* Black */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Section Heading */
+        .section-heading {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #000000;
+            margin: 40px 0;
+            letter-spacing: 2px;
+        }
+
+        .section-heading::after {
+            content: "";
+            display: block;
+            margin: 10px auto;
+            width: 120px;
+            height: 5px;
+            background-color: #ffcc00; /* Mustard yellow */
+            border-radius: 10px;
+        }
+
+        /* Container */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Course Card */
+        .course-card {
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-header {
+            background-color: #ffcc00; /* Mustard yellow */
+            color: #000000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .course-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .course-content p {
+            font-size: 1rem;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #000000;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Special Package Section */
+        .package-container {
+            background-color: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin: 50px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .package-header {
+            background-color: #ffcc00;
+            color: #000000;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 20px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .package-table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 2px solid #000000;
+        }
+
+        .package-table th,
+        .package-table td {
+            border: 1px solid #000000;
+            padding: 12px 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .package-table th {
+            background-color: #ffcc00;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .package-highlight {
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            color: #000000;
+            text-transform: uppercase;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff0000;
+            margin: 15px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #000000;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #333333;
+            transform: translateY(-3px);
+        }
+
+        .cta-button:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="section-heading">Our Courses</div>
+
+    <div class="container">
+        <div class="course-card">
+            <div class="course-header">Data Science</div>
+            <div class="course-content">
+                <p>Master data science with Python, SQL, machine learning, and real-world projects.</p>
+                <span class="price">₹49,999</span>
+            </div>
+        </div>
+        <div class="course-card">
+            <div class="course-header">Data Analytics</div>
+            <div class="course-content">
+                <p>Learn data analysis, visualization, and insights using tools like Python and Tableau.</p>
+                <span class="price">₹24,999</span>
+            </div>
+        </div>
+        <div class="course-card">
+            <div class="course-header">IoT (Internet of Things)</div>
+            <div class="course-content">
+                <p>Build IoT devices, integrate hardware and software, and explore real-world IoT applications.</p>
+                <span class="price">₹24,999</span>
+            </div>
+        </div>
+        <div class="course-card">
+            <div class="course-header">ROS 2 & Autonomous Systems</div>
+            <div class="course-content">
+                <p>Develop autonomous robots, learn ROS 2, and work on self-driving technology projects.</p>
+                <span class="price">₹24,999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="package-container">
+        <div class="package-header">Tech Mastery Package</div>
+        <table class="package-table">
+            <tr>
+                <th>Details</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Number of Courses</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Duration</td>
+                <td>14 Months</td>
+            </tr>
+            <tr>
+                <td>Discount</td>
+                <td>15-20% OFF</td>
+            </tr>
+            <tr>
+                <td>Seats</td>
+                <td>Limited</td>
+            </tr>
+        </table>
+        <p class="package-highlight">Enroll in the Full Package for an Exclusive Discount!</p>
+        <p class="package-price">💰 Total Value: ₹1,24,996 <br> 🎉 Discounted Price: ₹99,999</p>
+        <a href="#" class="cta-button">Enroll Now</a>
+    </div>
+</body>
+</html>

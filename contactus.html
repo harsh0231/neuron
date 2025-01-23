@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: transparent; /* Make background transparent */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            color: #333;
+            padding: 40px 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px); /* Glass effect */
+                   }
+
+        .contact-container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .contact-item svg {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #F4C430;
+            min-width: 24px;
+        }
+
+        .contact-item span {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-item a:hover {
+            color: #F4C430;
+        }
+
+        .address {
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .icon {
+            min-width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <img src="logo.png" alt="Neuron Logo" class="logo">
+        <h2>Contact Us</h2>
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.88 19.88 0 0 1-8.63-3.07 19.51 19.51 0 0 1-6-6A19.88 19.88 0 0 1 3 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .71 3.24 2 2 0 0 1-.45 2L9 10a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2-.45 12.05 12.05 0 0 0 3.24.7 2 2 0 0 1 1.72 2z"></path>
+            </svg>
+            <span><a href="tel:9263624743">9263624743</a></span>
+        </div>
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                <path d="M22 5H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"></path>
+                <polyline points="22,7 12,13 2,7"></polyline>
+            </svg>
+            <span><a href="mailto:info@neuron.org.in">info@neuron.org.in</a></span>
+        </div>
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="address">
+                1st Floor, AnjuShree Complex,<br>
+                East Jail Road,<br>
+                Ranchi - 834001
+            </span>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for redirecting clicks outside the contact container
+        document.addEventListener('click', function (event) {
+            const container = document.querySelector('.contact-container');
+            if (!container.contains(event.target)) {
+                window.location.href = './index.html';
+            }
+        });
+    </script>
+</body>
+</html>

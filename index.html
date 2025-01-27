@@ -395,6 +395,29 @@
             padding: 20px;
             text-align: center;
         }
+        .courses-container {
+    text-align: center;
+    margin: 50px auto 20px;
+}
+
+.courses-heading {
+    font-size: 3rem;
+    font-weight: normal;
+    font-family: 'Georgia', serif;
+    color: #444;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.courses-heading::after {
+    content: "";
+    display: block;
+    margin: 10px auto;
+    width: 150px;
+    height: 4px;
+    background-color: #F4C430;
+    border-radius: 2px;
+}
 
         .course-content {
             padding: 20px;
@@ -542,12 +565,12 @@
                 <img src="logo-placeholder.png" alt="Neuron Logo">
                 <div class="header-title">
                     NEURON
-                    <span>AI   &   Robotics</span>
+                    <span>AI & Robotics</span>
                 </div>
             </div>
             <!-- Desktop Navigation -->
             <nav class="header-nav">
-                <a href="#" onclick="navigateHome()">Programs</a>
+                <a href="#" onclick="navigateHome()">Products and services</a>
                 <a href="#" onclick="navigateToContact()">Contact Us</a>
                 <a href="#" onclick="navigateToForm()">Join Our Courses</a>
             </nav>
@@ -559,7 +582,7 @@
             </div>
             <!-- Mobile Navigation -->
             <div class="mobile-menu" id="mobileMenu">
-                <a href="#" onclick="navigateHome()">Programs</a>
+                <a href="#" onclick="navigateHome()">Products and services</a>
                 <a href="#" onclick="navigateToContact()">Contact Us</a>
                 <a href="#" onclick="navigateToForm()">Join Our Courses</a>
             </div>
@@ -650,7 +673,11 @@
         <p>In addition to our educational initiatives, we specialize in developing <span>Custom Chatbot Solutions</span> tailored to business needs, showcasing our commitment to innovation. At Neuron AI and Robotics, we aim to create a dynamic learning environment where students can unlock their potential and build a successful future in the ever-evolving world of technology.</p>
     </div>
 
-    <div class="section-heading">Our Courses</div>
+<!-- Add this code above the existing "Our Courses" section -->
+<div class="courses-container">
+    <h2 class="courses-heading">Our Courses</h2>
+</div>
+
 
     <div class="container">
         <div class="course-card" onclick="redirectTo('science.html')">
@@ -686,7 +713,7 @@
     <a class="download-button" href="https://drive.google.com/file/d/13Mkv71xPJXVw1bfTg6qfT3RuIM5RfyP4/view" target="_blank">Download Course Brochure</a>
 
     <div class="package-container">
-        <div class="package-header">Tech Mastery Package</div>
+        <div class="package-header">Innovator’s Pathway Package</div>
         <table class="package-table">
             <tr>
                 <th>Details</th>
@@ -718,8 +745,9 @@
 
     <script>
         function navigateHome() {
-            window.location.href = '/';
-        }
+        window.location.href = './services.html';
+    }
+
 
         function navigateToContact() {
             window.location.href = './contactus.html';

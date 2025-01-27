@@ -1,0 +1,1172 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuron AI and Robotics - Courses</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #F4C430;
+            color: #000000;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .header-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid #000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header-title {
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .header-title span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .header-nav a:hover {
+            background-color: #34495e;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+            background: #F4C430;
+            padding: 30px;
+            border-radius: 15px;
+            color: #000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .intro-section h1 {
+            font-size: 40px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .intro-section p {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+        .price-highlight {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
+            background: #d35400;
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .class-container {
+            margin: 30px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        .course-section-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .course-section-header h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin: 0;
+        }
+        .course-section-header p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        .course-card {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ecf0f1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .course-card i {
+            font-size: 36px;
+            color: #3498db;
+            margin-right: 15px;
+        }
+        .course-card h2 {
+            font-size: 22px;
+            color: #34495e;
+            margin: 0;
+        }
+        .course-card p {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin: 5px 0 0;
+        }
+        .course-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #ecf0f1;
+            margin-top: 15px;
+            background-color: #ffffff;
+            border-radius: 0 0 10px 10px;
+            animation: fadeIn 0.3s ease;
+        }
+        .course-content h3 {
+            font-size: 20px;
+            color: #2c3e50;
+        }
+        .course-content ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+        .course-content ul li {
+            margin-bottom: 10px;
+            color: #7f8c8d;
+        }
+        .course-content ul li ul {
+            margin-top: 5px;
+        }
+        .show {
+            display: block;
+        }
+        .products-section {
+        margin-top: 40px;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .products-section h2 {
+        font-size: 36px;
+        color: #000;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        background: #f7f9fc;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F4C430;
+        border-radius: 50%;
+        font-size: 36px;
+        color: #000;
+        margin-bottom: 20px;
+    }
+
+    .product-details h3 {
+        font-size: 20px;
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    .product-details p {
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+    }
+    .contact-us-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us-section h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.contact-us-section p {
+    font-size: 18px;
+    color: #34495e;
+    margin: 5px 0;
+}
+
+.contact-us-section a {
+    color: #3498db;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-us-section a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+        footer {
+            background-color: #F4C430;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ecf0f1;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-logo">
+        <img src="logo-placeholder.png" alt="Neuron Logo">
+        <div class="header-title">
+            NEURON
+            <span>AI & Robotics</span>
+        </div>
+    </div>
+    <nav class="header-nav">
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<div class="main-container">
+    <div class="intro-section">
+        <h1>Future-Ready Tech Courses for Schools</h1>
+        <p>We provide comprehensive training, equipment, and dedicated teaching support for schools.</p>
+        <p>All sensors, devices, and kits are included along with expert teachers.</p>
+        <span class="price-highlight">Annual Fee: ₹11,00,000 | Monthly Installments: ₹91,667</span>
+    </div>
+
+<div class="container">
+    <div class="course-card" onclick="toggleContent('course-5')">
+        <h2>Class 5th Course Pattern</h2>
+       
+    </div>
+    <div class="course-content" id="course-5">
+        <h3>Course Duration: 1 Year</h3>
+        <p><strong>Target Group:</strong> CBSE and ICSE students (Class 5th)</p>
+        <p><strong>Focus:</strong> Building foundational knowledge in technology, programming, IoT, and logical thinking with interactive projects.</p>
+        <h3>Core Subjects Covered:</h3>
+        <ul>
+            <li><strong>Basics of Computers and Technology</strong>
+                <ul>
+                    <li>Understanding Hardware and Software</li>
+                    <li>Input/Output Devices</li>
+                    <li>Internet and Safe Browsing Practices</li>
+                </ul>
+            </li>
+            <li><strong>Introduction to Programming</strong>
+                <ul>
+                    <li>Basics of Coding using Scratch Programming</li>
+                    <li>Block-based logic building</li>
+                </ul>
+            </li>
+            <li><strong>Introduction to IoT</strong>
+                <ul>
+                    <li>What is IoT?</li>
+                    <li>Understanding Sensors, Actuators, and Connectivity</li>
+                    <li>Practical Demonstrations (Using kits like Arduino for beginners)</li>
+                </ul>
+            </li>
+            <li><strong>Introduction to Artificial Intelligence</strong>
+                <ul>
+                    <li>Basics of AI and its Applications</li>
+                    <li>Fun AI Activities: Image recognition, voice commands, etc.</li>
+                </ul>
+            </li>
+            <li><strong>Project Management Basics</strong>
+                <ul>
+                    <li>Planning small tasks and documenting progress</li>
+                    <li>Teamwork and collaboration activities</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Detailed Monthly Breakdown</h3>
+        <p><strong>Month 1-2:</strong> Foundational Knowledge</p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>Introduction to technology and computers.</li>
+                    <li>Basic Scratch Programming: Creating animations.</li>
+                    <li>Understanding IoT and simple sensors.</li>
+                    <li>Project 1: Smart Night Lamp using LDR sensor.</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Exploring the concept of variables and loops in Scratch.</li>
+                    <li>IoT Components: Breadboard, LEDs, and simple circuits.</li>
+                    <li>Project 2: Automatic Plant Watering System using soil moisture sensor.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4:</strong> Building Logical Thinking</p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>Building small games in Scratch (Maze Game, Number Guess Game).</li>
+                    <li>Introduction to AI through image recognition apps like "Quick, Draw!" by Google.</li>
+                    <li>Project 3: Smart Doorbell System (PIR sensor for detecting motion).</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>Exploring Scratch extensions for IoT-based simulations.</li>
+                    <li>Introduction to Python Programming (Basic Syntax, Printing, Variables).</li>
+                    <li>Project 4: IoT-Based Weather Monitoring System (Temperature and humidity sensor).</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6:</strong> Advanced Problem Solving</p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>Python Programming: Conditional Statements and Loops.</li>
+                    <li>AI Activity: Creating a chatbot using simple Scratch and Python concepts.</li>
+                    <li>Project 5: Obstacle Avoiding Car using ultrasonic sensors.</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>IoT: Exploring cloud platforms like ThingSpeak for storing IoT data.</li>
+                    <li>Python Programming: Reading and writing data.</li>
+                    <li>Project 6: Home Automation System (Controlling appliances via smartphone).</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Skills Acquired by the End of Class 5:</h3>
+        <ul>
+            <li>Basic understanding of technology and programming.</li>
+            <li>Ability to design small IoT projects.</li>
+            <li>Logical and creative problem-solving.</li>
+            <li>Teamwork and project documentation skills.</li>
+            <li>Familiarity with AI concepts like image recognition and chatbot creation.</li>
+        </ul>
+    </div>
+
+    <div class="course-card" onclick="toggleContent('course-6')">
+        <h2>Class 6th Course Pattern</h2>
+        
+    </div>
+    <div class="course-content" id="course-6">
+        <h3>Course Duration: 1 Year</h3>
+        <p><strong>Target Group:</strong> CBSE and ICSE students (Class 6th)</p>
+        <p><strong>Focus:</strong> Strengthening foundational programming, introducing IoT concepts with simple applications, and exploring beginner-friendly AI and data science topics.</p>
+        <h3>Core Subjects Covered:</h3>
+        <ul>
+            <li><strong>Python Programming Basics:</strong>
+                <ul>
+                    <li>Understanding syntax, variables, and loops.</li>
+                    <li>Simple projects with text-based outputs.</li>
+                </ul>
+            </li>
+            <li><strong>Introduction to IoT:</strong>
+                <ul>
+                    <li>Hands-on work with sensors and actuators.</li>
+                    <li>Basic Arduino projects with step-by-step guidance.</li>
+                </ul>
+            </li>
+            <li><strong>AI and Data Science:</strong>
+                <ul>
+                    <li>Basics of AI concepts through fun examples.</li>
+                    <li>Exploring patterns in small datasets (e.g., weather, scores).</li>
+                </ul>
+            </li>
+            <li><strong>Collaborative Project Work:</strong>
+                <ul>
+                    <li>Team-based learning and small-group projects.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Detailed Monthly Breakdown</h3>
+        <p><strong>Month 1-2:</strong> Fundamentals</p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>Python Basics: Variables, data types, simple input/output.</li>
+                    <li>IoT: Introduction to sensors and actuators, basic Arduino setup.</li>
+                    <li>Fun activities: Writing Python programs for simple math games.</li>
+                    <li>Project 1: LED Blinking Patterns (Using Arduino).</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Python Programming: Loops (for and while) and basic conditionals.</li>
+                    <li>IoT: Using temperature and light sensors.</li>
+                    <li>Introduction to simple data visualization (drawing bar charts on paper based on IoT data).</li>
+                    <li>Project 2: Automatic Night Lamp (Using LDR sensor).</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4:</strong> Intermediate Learning</p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>Python Programming: Functions (introduction).</li>
+                    <li>IoT: Reading sensor data and displaying it on the serial monitor.</li>
+                    <li>Basic AI Activity: Understanding how machines "see" patterns (e.g., shapes and colors).</li>
+                    <li>Project 3: Temperature and Humidity Monitor (Using DHT11 sensor).</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>Python Programming: Lists and basic operations (e.g., finding the average of numbers).</li>
+                    <li>Data Science: Collecting small datasets (like daily temperatures).</li>
+                    <li>AI Activity: Exploring a simple chatbot concept using if-else conditions.</li>
+                    <li>Project 4: Soil Moisture-Based Plant Watering System.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6:</strong> Fun with AI and IoT</p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>Python Programming: Drawing shapes using the turtle module.</li>
+                    <li>IoT: Using ESP32 for wireless connections (pre-coded examples).</li>
+                    <li>AI Activity: Voice commands with pre-built tools (e.g., Google Assistant).</li>
+                    <li>Project 5: Smart Fan Control System (Using temperature sensors).</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>Python Advanced: Understanding how to save data to a text file.</li>
+                    <li>Collaborative Project: Combining IoT with a small Python program.</li>
+                    <li>Project 6: Home Automation System (Controlling lights and fans with a basic app).</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Skills Acquired by the End of Class 6:</h3>
+        <ul>
+            <li>Basic Python programming skills (variables, loops, functions).</li>
+            <li>Ability to work with IoT devices like Arduino and ESP32 for simple projects.</li>
+            <li>Familiarity with AI concepts like chatbots and pattern recognition.</li>
+            <li>Understanding of how to visualize data and use it for small projects.</li>
+            <li>Confidence in teamwork and project management.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="course-card" onclick="toggleContent('course-7')">
+        <h2>Class 7th Course Pattern</h2>
+        
+    </div>
+    <div class="course-content" id="course-7">
+        <h3>Class 7 Course Pattern</h3>
+        <p><strong>Weekly Plan Overview</strong></p>
+        <h4>Core Subjects Covered:</h4>
+        <ul>
+            <li><strong>Python Programming - Intermediate:</strong>
+                <ul>
+                    <li>File handling, working with strings and lists.</li>
+                    <li>Creating small applications using Python.</li>
+                </ul>
+            </li>
+            <li><strong>Frontend Development:</strong>
+                <ul>
+                    <li>Basics of HTML and CSS to create simple web pages.</li>
+                </ul>
+            </li>
+            <li><strong>IoT Projects with Cloud Integration:</strong>
+                <ul>
+                    <li>Introduction to IoT cloud platforms like ThingSpeak or Blynk.</li>
+                    <li>Collecting data and visualizing it online.</li>
+                </ul>
+            </li>
+            <li><strong>AI and Data Science:</strong>
+                <ul>
+                    <li>Introduction to machine learning concepts with examples.</li>
+                    <li>Exploring AI through pre-built libraries like scikit-learn.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Detailed Monthly Breakdown:</h4>
+        <p><strong>Month 1-2: Strengthening Python Programming</strong></p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>Python Programming: File handling, basic string operations.</li>
+                    <li>Introduction to HTML: Creating a simple webpage with headings and paragraphs.</li>
+                    <li>IoT Basics: Working with Arduino and ESP32 for wireless control.</li>
+                    <li>Project 1: Smart Light System (Controlling LEDs through a webpage).</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Python: Working with lists and dictionaries for data storage.</li>
+                    <li>HTML and CSS: Adding styles to webpages.</li>
+                    <li>IoT: Collecting temperature and humidity data and uploading it to ThingSpeak.</li>
+                    <li>Project 2: Weather Monitoring Dashboard.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4: Building Applications</strong></p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>Python: Writing modular programs using functions.</li>
+                    <li>IoT: Using sensors for real-time data collection.</li>
+                    <li>AI Basics: Exploring supervised learning with examples.</li>
+                    <li>Project 3: AI-Based Attendance System using pre-trained models.</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>HTML and CSS: Creating interactive web pages with buttons and links.</li>
+                    <li>IoT and Python Integration: Visualizing IoT data using Python libraries.</li>
+                    <li>Project 4: Soil Health Monitoring System (IoT sensors and Python).</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6: Advanced Topics</strong></p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>AI: Training a simple machine learning model with data collected from IoT projects.</li>
+                    <li>Python Advanced: Error handling and debugging.</li>
+                    <li>Project 5: Energy Monitoring System using IoT.</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>Collaborative Project: Building a complete system with IoT, Python, and a web interface.</li>
+                    <li>Project 6: IoT-Based Home Security System.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Skills Acquired by the End of Class 7:</h4>
+        <ul>
+            <li>Proficiency in Python programming (functions, file handling, debugging).</li>
+            <li>Basic web development skills (HTML and CSS).</li>
+            <li>Familiarity with IoT cloud platforms and real-time data visualization.</li>
+            <li>Introduction to AI and machine learning basics.</li>
+            <li>Ability to complete integrated projects with teamwork.</li>
+        </ul>
+    </div>
+
+    <div class="course-card" onclick="toggleContent('course-8')">
+        <h2>Class 8th Course Pattern</h2>
+        
+    </div>
+    <div class="course-content" id="course-8">
+        <h3>Class 8 Course Pattern</h3>
+        <p><strong>Weekly Plan Overview</strong></p>
+        <h4>Core Subjects Covered:</h4>
+        <ul>
+            <li><strong>Python Programming - Advanced:</strong>
+                <ul>
+                    <li>Classes, object-oriented programming.</li>
+                    <li>Building simple Python-based applications.</li>
+                </ul>
+            </li>
+            <li><strong>Frontend Development with JavaScript:</strong>
+                <ul>
+                    <li>Introduction to JavaScript for interactivity.</li>
+                </ul>
+            </li>
+            <li><strong>IoT with Automation:</strong>
+                <ul>
+                    <li>Using IoT for advanced automation and control.</li>
+                </ul>
+            </li>
+            <li><strong>AI and Data Science:</strong>
+                <ul>
+                    <li>Building small AI models with tools like TensorFlow Lite.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Detailed Monthly Breakdown:</h4>
+        <p><strong>Month 1-2: Advanced Python Concepts</strong></p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>Python: Classes and objects (OOP basics).</li>
+                    <li>JavaScript: Variables and functions.</li>
+                    <li>IoT: Advanced Arduino programming for automation.</li>
+                    <li>Project 1: Smart Door Lock System (using servo motor and RFID).</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Python: Creating small console-based applications.</li>
+                    <li>JavaScript: Adding interactivity to web pages.</li>
+                    <li>IoT: Connecting multiple sensors for automated systems.</li>
+                    <li>Project 2: IoT-Based Traffic Light System.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4: Advanced Applications</strong></p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>AI: Building image classifiers with pre-built models.</li>
+                    <li>Data Science: Cleaning and visualizing data using Python (matplotlib, pandas).</li>
+                    <li>IoT: Uploading sensor data to cloud platforms and analyzing it.</li>
+                    <li>Project 3: AI-Powered Plant Disease Detector.</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>JavaScript: Event handling and DOM manipulation.</li>
+                    <li>Python Advanced: File-based mini-projects.</li>
+                    <li>IoT: Creating dashboards for live IoT monitoring.</li>
+                    <li>Project 4: Water Quality Monitoring System.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6: Integrative Projects</strong></p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>AI: Training simple models with TensorFlow Lite.</li>
+                    <li>Python: Working with APIs for real-world data.</li>
+                    <li>Project 5: AI-Powered Chatbot for Home Assistance.</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>Collaborative Project: End-to-end IoT, AI, and web development integration.</li>
+                    <li>Project 6: Smart Agriculture System (IoT, AI, and web interface).</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Skills Acquired by the End of Class 8:</h4>
+        <ul>
+            <li>Advanced Python programming (OOP, APIs, file-based projects).</li>
+            <li>JavaScript fundamentals for interactive web pages.</li>
+            <li>IoT project automation and multi-sensor systems.</li>
+            <li>AI model building with TensorFlow Lite and Python.</li>
+            <li>Real-world project execution and integration skills.</li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="course-card" onclick="toggleContent('course-9')">
+        <h2>Class 9th Course Pattern</h2>
+        
+    </div>
+    <div class="course-content" id="course-9">
+        <h3>Class 9 Course Pattern</h3>
+        <p><strong>Weekly Plan Overview</strong></p>
+        <h4>Core Subjects Covered:</h4>
+        <ul>
+            <li><strong>Python Programming - Advanced Basics:</strong>
+                <ul>
+                    <li>Data structures like lists, tuples, and dictionaries.</li>
+                    <li>Simple file handling and basic API integration.</li>
+                </ul>
+            </li>
+            <li><strong>Web Development:</strong>
+                <ul>
+                    <li>HTML and CSS for creating basic web pages.</li>
+                    <li>Introduction to JavaScript for basic interactivity.</li>
+                </ul>
+            </li>
+            <li><strong>IoT Basics:</strong>
+                <ul>
+                    <li>Using ESP32 for basic IoT projects.</li>
+                    <li>Sending sensor data to simple dashboards.</li>
+                </ul>
+            </li>
+            <li><strong>AI and Data Science:</strong>
+                <ul>
+                    <li>Understanding basic machine learning concepts.</li>
+                    <li>Exploring data visualization with Python libraries.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Detailed Monthly Breakdown:</h4>
+        <p><strong>Month 1-2: Python and IoT Basics</strong></p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>Python: Lists, loops, and conditionals.</li>
+                    <li>IoT: Setting up ESP32 for basic sensor reading.</li>
+                    <li>HTML Basics: Structuring simple web pages.</li>
+                    <li>Project 1: Temperature and Humidity Monitoring System.</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Python: File handling basics and working with JSON data.</li>
+                    <li>CSS Basics: Styling simple web pages.</li>
+                    <li>IoT: Sending data to a local dashboard.</li>
+                    <li>Project 2: IoT-Based Smart Night Lamp.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4: Interactive Applications</strong></p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>Python: Writing reusable functions.</li>
+                    <li>Web Development: Adding forms and buttons for interaction.</li>
+                    <li>AI: Exploring simple regression and classification examples.</li>
+                    <li>Project 3: AI-Powered Weather Forecast Dashboard.</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>JavaScript: Adding basic interactivity to web pages.</li>
+                    <li>IoT: Automating sensors with simple logic.</li>
+                    <li>Project 4: Soil Moisture Monitoring System with Alerts.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6: Capstone Projects</strong></p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>AI: Using pre-trained models for image classification.</li>
+                    <li>IoT: Integrating AI and IoT for a smart system.</li>
+                    <li>Project 5: AI and IoT-Based Smart Security Camera.</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>Collaborative Project: Building a system combining Python, IoT, and a web interface.</li>
+                    <li>Project 6: AI-Powered Waste Management System.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Skills Acquired by the End of Class 9:</h4>
+        <ul>
+            <li>Basic Python programming skills (data structures, file handling).</li>
+            <li>Web development fundamentals (HTML, CSS, and JavaScript).</li>
+            <li>Introduction to IoT and cloud integration.</li>
+            <li>Basic AI concepts and data visualization skills.</li>
+            <li>Project management and teamwork.</li>
+        </ul>
+    </div>
+
+    <div class="course-card" onclick="toggleContent('course-10')">
+        <h2>Class 10th Course Pattern</h2>
+        
+    </div>
+    <div class="course-content" id="course-10">
+        <h3>Class 10 Course Pattern</h3>
+        <p><strong>Weekly Plan Overview</strong></p>
+        <h4>Core Subjects Covered:</h4>
+        <ul>
+            <li><strong>Full-Stack Basics:</strong>
+                <ul>
+                    <li>Frontend development with HTML, CSS, and JavaScript.</li>
+                    <li>Backend basics using Flask and SQLite.</li>
+                </ul>
+            </li>
+            <li><strong>IoT Projects:</strong>
+                <ul>
+                    <li>Building IoT systems with multiple sensors.</li>
+                    <li>Automating systems with cloud dashboards.</li>
+                </ul>
+            </li>
+            <li><strong>AI and Data Science:</strong>
+                <ul>
+                    <li>Simple AI model building with TensorFlow Lite.</li>
+                    <li>Visualizing data using Python libraries.</li>
+                </ul>
+            </li>
+            <li><strong>Collaborative Projects:</strong>
+                <ul>
+                    <li>Team-based projects solving real-world problems.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Detailed Monthly Breakdown:</h4>
+        <p><strong>Month 1-2: Basics of Full-Stack and IoT</strong></p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>HTML and CSS: Structuring and styling web pages.</li>
+                    <li>IoT: Setting up sensors and ESP32 for basic automation.</li>
+                    <li>Project 1: IoT-Based Light Control System.</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Flask Basics: Building a simple web app.</li>
+                    <li>IoT: Cloud integration for live data monitoring.</li>
+                    <li>Project 2: Health Monitoring System with IoT and Flask.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4: AI and Real-World Applications</strong></p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>AI: Training simple machine learning models with Python.</li>
+                    <li>Web Development: Adding interactivity with JavaScript.</li>
+                    <li>Project 3: AI-Driven Smart Traffic Management System.</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>IoT: Integrating multiple sensors for advanced projects.</li>
+                    <li>Project 4: Smart Agriculture Dashboard with AI and IoT.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6: Capstone Projects</strong></p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>AI: Using pre-trained models for natural language processing (NLP).</li>
+                    <li>IoT: Real-time automation using dashboards.</li>
+                    <li>Project 5: AI-Powered Personal Assistant System.</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>Collaborative Project: Combining full-stack, AI, and IoT in one system.</li>
+                    <li>Project 6: AI-Powered Disaster Management Solution.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Skills Acquired by the End of Class 10:</h4>
+        <ul>
+            <li>Intermediate full-stack development (frontend, backend, and databases).</li>
+            <li>IoT project integration with cloud services.</li>
+            <li>AI basics and practical applications in real-world systems.</li>
+            <li>Collaboration and problem-solving skills.</li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="course-card" onclick="toggleContent('course-11')">
+        <h2>Class 11th Course Pattern</h2>
+        
+    </div>
+    <div class="course-content" id="course-11">
+        <h3>Class 11 Course Pattern</h3>
+        <p><strong>Weekly Plan Overview</strong></p>
+        <h4>Core Subjects Covered:</h4>
+        <ul>
+            <li><strong>Advanced Python Programming:</strong>
+                <ul>
+                    <li>Object-oriented programming (OOP).</li>
+                    <li>Building modular and scalable applications.</li>
+                </ul>
+            </li>
+            <li><strong>Full-Stack Development:</strong>
+                <ul>
+                    <li>Advanced frontend (React.js) and backend (Flask/Django).</li>
+                    <li>Working with relational (MySQL) and NoSQL databases (MongoDB).</li>
+                </ul>
+            </li>
+            <li><strong>IoT and Robotics:</strong>
+                <ul>
+                    <li>Advanced robotics with Raspberry Pi.</li>
+                    <li>IoT-based automation and integration with cloud platforms.</li>
+                </ul>
+            </li>
+            <li><strong>AI and Machine Learning:</strong>
+                <ul>
+                    <li>Deep learning basics with TensorFlow/PyTorch.</li>
+                    <li>Advanced supervised and unsupervised learning.</li>
+                </ul>
+            </li>
+            <li><strong>Data Science:</strong>
+                <ul>
+                    <li>Handling large datasets and real-time data analysis.</li>
+                    <li>Data visualization and dashboard creation.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Detailed Monthly Breakdown:</h4>
+        <p><strong>Month 1-2: Advanced Python and Robotics</strong></p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>Python: Classes, objects, inheritance, and polymorphism.</li>
+                    <li>Robotics: Introduction to Raspberry Pi and motor drivers.</li>
+                    <li>Full-stack: Basics of React.js and building dynamic web pages.</li>
+                    <li>Project 1: AI-Powered Line Following Robot.</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Python: Working with APIs and multithreading.</li>
+                    <li>IoT: Using Raspberry Pi for edge computing.</li>
+                    <li>AI: Introduction to TensorFlow and neural networks.</li>
+                    <li>Project 2: IoT-Based Weather Prediction System.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4: AI and Cloud Integration</strong></p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>AI: Training and evaluating deep learning models.</li>
+                    <li>IoT: Integration with AWS/Azure IoT Hub for cloud data management.</li>
+                    <li>Data Science: Cleaning and preprocessing large datasets.</li>
+                    <li>Project 3: AI-Powered Disease Detection System (using TensorFlow and cloud integration).</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>Full-stack: Backend with Flask/Django and integrating databases.</li>
+                    <li>IoT: Using GPS and GSM modules for location-based projects.</li>
+                    <li>Project 4: Real-Time Fleet Management System.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6: Industry-Level Projects</strong></p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>AI: Implementing recommendation systems and natural language models.</li>
+                    <li>Robotics: Using cameras and sensors for autonomous navigation.</li>
+                    <li>Project 5: AI-Powered Smart Surveillance Drone.</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>Collaborative Final Project: Integrating all learned technologies.</li>
+                    <li>Project 6: IoT-Based Smart City Infrastructure with AI Analytics.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Skills Acquired by the End of Class 11:</h4>
+        <ul>
+            <li>Mastery of OOP and advanced Python programming.</li>
+            <li>Full-stack development with React.js, Flask/Django, and databases.</li>
+            <li>Expertise in IoT and robotics using Raspberry Pi and cloud platforms.</li>
+            <li>Proficiency in deep learning and AI model development.</li>
+            <li>Team collaboration and project execution at an industry level.</li>
+        </ul>
+    </div>
+
+    <div class="course-card" onclick="toggleContent('course-12')">
+        <h2>Class 12th Course Pattern</h2>
+        
+    </div>
+    <div class="course-content" id="course-12">
+        <h3>Class 12 Course Pattern</h3>
+        <p><strong>Weekly Plan Overview</strong></p>
+        <h4>Core Subjects Covered:</h4>
+        <ul>
+            <li><strong>Advanced Programming and Frameworks:</strong>
+                <ul>
+                    <li>Python for automation and scripting.</li>
+                    <li>Advanced frameworks for AI and web development.</li>
+                </ul>
+            </li>
+            <li><strong>IoT and Robotics:</strong>
+                <ul>
+                    <li>IoT security and deployment.</li>
+                    <li>Advanced robotics with AI integration.</li>
+                </ul>
+            </li>
+            <li><strong>AI and Data Science Specialization:</strong>
+                <ul>
+                    <li>Reinforcement learning.</li>
+                    <li>Advanced AI for computer vision and NLP.</li>
+                </ul>
+            </li>
+            <li><strong>Capstone Projects and Competitions:</strong>
+                <ul>
+                    <li>Preparing for hackathons and international competitions.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Detailed Monthly Breakdown:</h4>
+        <p><strong>Month 1-2: Advanced Programming and Robotics</strong></p>
+        <ul>
+            <li><strong>Week 1-4:</strong>
+                <ul>
+                    <li>Python: Advanced scripting and automation.</li>
+                    <li>Robotics: Advanced Raspberry Pi and AI-based robotic navigation.</li>
+                    <li>AI: Exploring reinforcement learning basics.</li>
+                    <li>Project 1: Autonomous Delivery Robot.</li>
+                </ul>
+            </li>
+            <li><strong>Week 5-8:</strong>
+                <ul>
+                    <li>Full-stack: Advanced backend with Django and APIs.</li>
+                    <li>IoT: Edge computing and deploying IoT solutions.</li>
+                    <li>AI: Advanced computer vision with TensorFlow.</li>
+                    <li>Project 2: AI-Powered Industrial Defect Detection System.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 3-4: AI and Advanced IoT</strong></p>
+        <ul>
+            <li><strong>Week 9-12:</strong>
+                <ul>
+                    <li>AI: Training and deploying NLP models.</li>
+                    <li>Data Science: Real-time analytics and predictive modeling.</li>
+                    <li>IoT: Security practices for IoT deployments.</li>
+                    <li>Project 3: AI-Powered Chatbot with Voice and Text Integration.</li>
+                </ul>
+            </li>
+            <li><strong>Week 13-16:</strong>
+                <ul>
+                    <li>Robotics: Integration of AI in multi-robot systems.</li>
+                    <li>Collaborative Project Development.</li>
+                    <li>Project 4: Multi-Robot Warehouse Automation System.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Month 5-6: Industry Capstone Projects</strong></p>
+        <ul>
+            <li><strong>Week 17-20:</strong>
+                <ul>
+                    <li>Capstone Project: Designing end-to-end solutions.</li>
+                    <li>Focus on presentation skills for competitions.</li>
+                    <li>Project 5: AI and IoT-Based Disaster Management System.</li>
+                </ul>
+            </li>
+            <li><strong>Week 21-24:</strong>
+                <ul>
+                    <li>Industry Collaboration: Real-world problem-solving with mentorship.</li>
+                    <li>Project 6: Smart City Solution Prototype for Traffic, Energy, and Waste Management.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Skills Acquired by the End of Class 12:</h4>
+        <ul>
+            <li>Proficiency in advanced programming and frameworks for automation.</li>
+            <li>Advanced AI and machine learning skills, including reinforcement learning.</li>
+            <li>Expertise in IoT security, deployment, and cloud integration.</li>
+            <li>Hands-on experience with robotics systems and AI-driven automation.</li>
+            <li>Preparedness for hackathons, industry challenges, and higher education.</li>
+        </ul>
+    </div>
+</div>
+<div class="products-section">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="product-details">
+                <h3>Customiz AI Solutions Development</h3>
+                <p>We build advanced chatbots using RAG (OLAMA) technology with VR-based animations integrated into kiosks.</p>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="product-details">
+                <h3>Website Designing</h3>
+                <p>We design professional and responsive websites tailored to your needs.</p>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <div class="product-details">
+                <h3>Home Automation Products</h3>
+                <p>Our home automation solutions bring convenience and efficiency to your living space.</p>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-card">
+            <div class="product-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="product-details">
+                <h3>Computer Vision Security</h3>
+                <p>State-of-the-art security systems powered by computer vision for enhanced safety.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contact-us-section">
+    <h3>Contact Us</h3>
+    <p>If you're interested in our products or services, feel free to reach out!</p>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:info@neuron.org.in">info@neuron.org.in</a></p>
+        <p>Phone: <a href="tel:+919264431215">+91 92644 31215</a> / <a href="tel:+919263624743">+91 92636 24743</a></p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Neuron AI and Robotics. All Rights Reserved.
+</footer>
+
+<script>
+    function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>

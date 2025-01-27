@@ -6,69 +6,145 @@
     <title>Neuron AI & Robotics</title>
     <style>
         /* General Reset */
-        body, html {
+    /* General Reset */
+    body, html {
             margin: 0;
             padding: 0;
             font-family: 'Lato', sans-serif;
             box-sizing: border-box;
-            background-color: #fff8dc;
         }
 
         /* Header Styles */
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             background-color: #F4C430;
-            padding: 5px 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            border-bottom: 3px solid #000;
+            border-bottom: 4px solid #000;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 15px 40px;
         }
 
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Logo Section */
         .header-logo {
             display: flex;
             align-items: center;
-            cursor: pointer;
+            gap: 20px;
         }
 
         .header-logo img {
-            height: 300px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid #000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .header-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .header-title span {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: #444;
+            margin-top: 2px;
+        }
+
+        /* Navigation Styles */
         .header-nav {
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 30px;
         }
 
-        .header-nav button {
-            background: none;
-            border: none;
+        .header-nav a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: linear-gradient(to right, #ffffff, #f0f0f0);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-nav a:hover {
+            background: linear-gradient(to right, #000, #333);
+            color: #F4C430;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle div {
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            border-radius: 3px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #F4C430;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu a {
+            padding: 15px;
+            text-decoration: none;
             font-size: 16px;
             font-weight: bold;
             color: #000;
-            cursor: pointer;
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .header-nav button:hover {
-            color: #333;
-            transform: scale(1.1);
+        .mobile-menu a:hover {
+            background: #000;
+            color: #F4C430;
+            border-radius: 8px;
         }
 
-        /* Responsive Header */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header {
-                flex-wrap: wrap;
-                justify-content: center;
+            .header-nav {
+                display: none;
             }
 
-            .header-nav {
-                flex-wrap: wrap;
-                gap: 10px;
-                justify-content: center;
+            .menu-toggle {
+                display: flex;
             }
         }
         /* Footer Styles */
@@ -168,80 +244,78 @@
         .footer-bottom a:hover {
             text-decoration: underline;
         }
-        /* Section Heading */
-        .section-heading {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #000;
-            margin: 50px 0;
-            letter-spacing: 2px;
-        }
+              /* Why Choose Neuron Styles */
+        /* Why Choose Neuron Section Styles */
+.benefits-container {
+    background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+    padding: 80px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
 
-        .section-heading::after {
-            content: "";
-            display: block;
-            margin: 15px auto;
-            width: 100px;
-            height: 4px;
-            background-color: #ffcc00;
-            border-radius: 5px;
-        }
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+}
 
-        /* Benefits Section */
-        .benefits-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 40px;
-            background: #ffffff;
-            border: 2px solid #ddd;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
+.section-title::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 5px;
+    background: #f4c430;
+    margin: 15px auto;
+    border-radius: 5px;
+}
 
-        .benefits-container h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            color: #444;
-            margin-bottom: 20px;
-        }
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
 
-        .benefits-container h2::after {
-            content: "";
-            display: block;
-            margin: 10px auto;
-            width: 80px;
-            height: 3px;
-            background-color: #ffcc00;
-        }
+.benefit-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
 
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            padding: 15px;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
 
-        .benefit-icon {
-            font-size: 2rem;
-            color: #F4C430;
-            margin-right: 20px;
-        }
+.benefit-icon img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
 
-        .benefit-text {
-            font-size: 1.2rem;
-            color: #555;
-        }
 
-        .benefit-text span {
-            font-weight: bold;
-            color: #000;
-        }
+.benefit-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.benefit-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
 
         /* About Us Section */
         .about-us-container {
@@ -462,43 +536,112 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-logo" onclick="navigateHome()">
-            <img src="logo.png" alt="Neuron AI Logo">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="header-logo">
+                <img src="logo-placeholder.png" alt="Neuron Logo">
+                <div class="header-title">
+                    NEURON
+                    <span>AI & Robotics</span>
+                </div>
+            </div>
+            <!-- Desktop Navigation -->
+            <nav class="header-nav">
+                <a href="#" onclick="navigateHome()">Programs</a>
+                <a href="#" onclick="navigateToContact()">Contact Us</a>
+                <a href="#" onclick="navigateToForm()">Join Our Courses</a>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#" onclick="navigateHome()">Programs</a>
+                <a href="#" onclick="navigateToContact()">Contact Us</a>
+                <a href="#" onclick="navigateToForm()">Join Our Courses</a>
+            </div>
         </div>
-        <nav class="header-nav">
-            <button onclick="navigateHome()">Programs</button>
-            <button onclick="navigateToContact()">Contact Us</button>
-            <button onclick="navigateToForm()">Join Our Courses</button>
-        </nav>
     </header>
 
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+    
+
     <div class="benefits-container">
-        <h2>Why Choose Neuron?</h2>
-        <div class="benefit-item">
-            <span class="benefit-icon">&#128640;</span>
-            <div class="benefit-text">We provide <span>100% Placement Assistance</span> to ensure your success in the industry.</div>
-        </div>
-        <div class="benefit-item">
-            <span class="benefit-icon">&#128187;</span>
-            <div class="benefit-text">Hands-on experience with <span>Client-Based Industry Projects</span> for practical learning.</div>
-        </div>
-        <div class="benefit-item">
-            <span class="benefit-icon">&#127891;</span>
-            <div class="benefit-text">Earn <span>Internship Certificates</span> from top companies for enhanced career prospects.</div>
-        </div>
-        <div class="benefit-item">
-            <span class="benefit-icon">&#128736;</span>
-            <div class="benefit-text">Get hired by <span>Neuron AI</span> for custom chatbot projects and more.</div>
-        </div>
-        <div class="benefit-item">
-            <span class="benefit-icon">&#128104;&#8205;&#127891;</span>
-            <div class="benefit-text">Learn from <span>IITians</span> and industry professionals working in MNCs.</div>
-        </div>
-        <div class="benefit-item">
-            <span class="benefit-icon">&#127919;</span>
-            <div class="benefit-text">Receive <span>Mock Interviews</span>, HR connections, LinkedIn profile building, and resume development services.</div>
+        <h2 class="section-title">Why Choose Neuron?</h2>
+        <div class="benefits-grid">
+            <!-- Benefit Card 1 -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="placement-icon.png" alt="Placement Assistance Icon" />
+                </div>
+                <h3 class="benefit-title">Guaranteed Career Growth</h3>
+                <p class="benefit-description">
+                    Experience unmatched <strong>100% Placement Support</strong>, with connections to top industry leaders and personalized career guidance.
+                </p>
+            </div>
+            <!-- Benefit Card 2 -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="projects-icon.png" alt="Industry Projects Icon" />
+                </div>
+                <h3 class="benefit-title">Hands-On Industry Projects</h3>
+                <p class="benefit-description">
+                    Work on live, <strong>client-based projects</strong> from multinational companies to build a portfolio that stands out.
+                </p>
+            </div>
+            <!-- Benefit Card 3 -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="certificate-icon.png" alt="Certificate Icon" />
+                </div>
+                <h3 class="benefit-title">Global Certifications</h3>
+                <p class="benefit-description">
+                    Earn certifications recognized globally, backed by our partnerships with top tech giants and academic institutions.
+                </p>
+            </div>
+            <!-- Benefit Card 4 -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="mentorship-icon.png" alt="Mentorship Icon" />
+                </div>
+                <h3 class="benefit-title">Expert Mentorship</h3>
+                <p class="benefit-description">
+                    Learn from <strong>IIT alumni</strong> and industry professionals working at Fortune 500 companies.
+                </p>
+            </div>
+            <!-- Benefit Card 5 -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="robotics-icon.png" alt="Robotics Icon" />
+                </div>
+                <h3 class="benefit-title">Innovative Technologies</h3>
+                <p class="benefit-description">
+                    Get hands-on with cutting-edge technologies like AI, IoT, Robotics, and <strong>Autonomous Systems</strong>.
+                </p>
+            </div>
+            <!-- Benefit Card 6 -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="career-services-icon.png" alt="Career Services Icon" />
+                </div>
+                <h3 class="benefit-title">End-to-End Career Services</h3>
+                <p class="benefit-description">
+                    Benefit from resume optimization, LinkedIn building, mock interviews, and direct connections with HR professionals.
+                </p>
+            </div>
         </div>
     </div>
+    
+    
 
     <div class="about-us-container">
         <h2>About Us</h2>
